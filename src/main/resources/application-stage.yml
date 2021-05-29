@@ -1,0 +1,4 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306/master?serverTimeZone=Asia/Seoul&useLegacyDateTimeCode=false
