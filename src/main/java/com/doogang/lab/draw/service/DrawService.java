@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.doogang.lab.draw.domain.User;
-import com.doogang.lab.draw.domain.UserRepository;
+import com.doogang.lab.member.domain.User;
+import com.doogang.lab.member.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.doogang.lab.draw.controller.dto.UserRequest;
-import com.doogang.lab.draw.domain.User;
 import com.doogang.lab.draw.service.DrawService;
+import com.doogang.lab.member.controller.dto.UserRequest;
+import com.doogang.lab.member.domain.User;
 import lombok.RequiredArgsConstructor;
 
 @RequestMapping("/api/v1/draw")

@@ -1,4 +1,4 @@
-package com.doogang.lab.draw.config;
+package com.doogang.lab.config;
 
 import org.springframework.context.annotation.Configuration;
 

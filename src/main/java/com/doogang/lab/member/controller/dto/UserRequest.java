@@ -1,7 +1,6 @@
-package com.doogang.lab.draw.controller.dto;
+package com.doogang.lab.member.controller.dto;
 
-import com.doogang.lab.draw.domain.CellType;
-import com.doogang.lab.draw.domain.User;
+import com.doogang.lab.member.domain.User;
 import lombok.Getter;
 import lombok.Setter;
 
