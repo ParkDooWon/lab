@@ -8,12 +8,10 @@ import lombok.Setter;
 @Getter
 public class UserRequest {
 	private String name;
-	private CellType cellType;
 
 	public User toEntity() {
 		return User.builder()
 			.name(this.name)
-			.cellType(this.cellType)
 			.build();
 	}
 }

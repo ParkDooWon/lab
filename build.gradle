@@ -1,11 +1,11 @@
-jar.enabled=true
-bootJar.enabled=false
-
 plugins {
     id 'org.springframework.boot' version '2.5.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
+
+jar.enabled=true
+bootJar.enabled=false
 
 group = 'com.doogang'
 version = '0.0.1-SNAPSHOT'
