@@ -8,19 +8,14 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.doogang.lab.member.domain.User;
-import com.doogang.lab.member.domain.UserRepository;
+import com.doogang.lab.user.domain.User;
+import com.doogang.lab.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
 public class DrawService {
 	private final UserRepository userRepository;
-
-	@Transactional
-	public User registerUser(User user) {
-		return userRepository.save(user);
-	}
 
 	@Transactional(readOnly = true)
 	public List<User> drawUser(int size) {

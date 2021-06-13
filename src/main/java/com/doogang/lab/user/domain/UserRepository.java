@@ -1,4 +1,4 @@
-package com.doogang.lab.member.domain;
+package com.doogang.lab.user.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -5,15 +5,12 @@ import java.util.Set;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.doogang.lab.draw.service.DrawService;
-import com.doogang.lab.member.controller.dto.UserRequest;
-import com.doogang.lab.member.domain.User;
+import com.doogang.lab.user.domain.User;
 import lombok.RequiredArgsConstructor;
 
 @RequestMapping("/api/v1/draw")
@@ -21,12 +18,6 @@ import lombok.RequiredArgsConstructor;
 @RestController
 public class DrawController {
 	private final DrawService drawService;
-
-	@PostMapping
-	public ResponseEntity<User> register(@RequestBody UserRequest userRequest) {
-		User user = drawService.registerUser(userRequest.toEntity());
-		return ResponseEntity.ok(user);
-	}
 
 	@GetMapping("/all")
 	public ResponseEntity<Set<User>> drawAllUser() {

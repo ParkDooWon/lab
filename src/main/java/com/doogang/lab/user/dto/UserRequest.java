@@ -1,6 +1,6 @@
-package com.doogang.lab.member.controller.dto;
+package com.doogang.lab.user.dto;
 
-import com.doogang.lab.member.domain.User;
+import com.doogang.lab.user.domain.User;
 import lombok.Getter;
 import lombok.Setter;
 
