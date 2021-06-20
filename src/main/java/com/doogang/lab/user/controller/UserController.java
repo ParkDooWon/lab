@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.doogang.lab.team.domain.Team;
-import com.doogang.lab.team.domain.TeamRepository;
 import com.doogang.lab.team.service.TeamService;
 import com.doogang.lab.user.domain.User;
 import com.doogang.lab.user.dto.UserRequest;
@@ -24,7 +23,6 @@ import lombok.RequiredArgsConstructor;
 public class UserController {
 	private final UserService userService;
 	private final TeamService teamService;
-	private final TeamRepository teamRepository;
 
 	@PostMapping("/teams/{teamId}/users")
 	public ResponseEntity<UserResponse> register(@PathVariable Long teamId, @RequestBody UserRequest userRequest) {
@@ -41,15 +39,15 @@ public class UserController {
 	}
 
 	@GetMapping("/teams/users")
-	public ResponseEntity<Boolean> getUsers() {
-		List<Team> all = teamRepository.findAll();
+	public ResponseEntity<Boolean> getTeams() {
+		List<Team> all = teamService.findAll();
 		for (Team team : all) {
+			System.err.println("team id : " + team.getId());
 			for (User user : team.getUsers()) {
-				System.err.println(user.getId());
-				// team에 2명의 user가 있다고 할 때, 각 user를 조회할때마다 user 테이블을 select하진 않는다.
-				// 즉, team.getUsers().get(0)일 때 1번의 select, team.getUsers().get(1)일 때 1번의 select 이렇진않다.
+				System.err.println("    user id : " + user.getId());
 			}
 		}
+		System.err.println("조회 끝!");
 		return ResponseEntity.ok(Boolean.TRUE);
 	}
 }

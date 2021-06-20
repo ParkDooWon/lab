@@ -29,7 +29,7 @@ public class Team extends BaseTimeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	@OneToMany(mappedBy = "team", orphanRemoval = true, cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "team", orphanRemoval = true, cascade = CascadeType.PERSIST) // jpql을 쓸거면 fetch 전략이 무의미하다
 	private final List<User> users = new ArrayList<>();
 	@Enumerated(EnumType.STRING)
 	private Campus campus;

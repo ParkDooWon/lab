@@ -1,5 +1,7 @@
 package com.doogang.lab.team.service;
 
+import java.util.List;
+
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.stereotype.Service;
@@ -34,5 +36,10 @@ public class TeamService {
 	public boolean deleteUser(User user) {
 		userRepository.deleteById(user.getId());
 		return true;
+	}
+
+	@Transactional(readOnly = true)
+	public List<Team> findAll() {
+		return teamRepository.findAllDistinctWithEntityGraph();
 	}
 }
