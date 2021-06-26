@@ -50,4 +50,15 @@ public class UserController {
 		System.err.println("조회 끝!");
 		return ResponseEntity.ok(Boolean.TRUE);
 	}
+
+	@GetMapping("/users")
+	public ResponseEntity<Boolean> getUsers() {
+		List<User> users = userService.findAll(); // Many 쪽을 전체 조회하면 마찬가지로 N+1 쿼리 발생
+		for (User user : users) {
+			System.err.println("user id : " + user.getId());
+			System.err.println("    team id : " + user.getTeam().getId());
+		}
+		System.err.println("조회 끝!");
+		return ResponseEntity.ok(Boolean.TRUE);
+	}
 }

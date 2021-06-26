@@ -1,5 +1,7 @@
 package com.doogang.lab.user.service;
 
+import java.util.List;
+
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.stereotype.Service;
@@ -24,5 +26,10 @@ public class UserService {
 	public User findById(Long userId) {
 		return userRepository.findById(userId)
 			.orElseThrow(() -> new EntityNotFoundException("user_id에 해당하는 유저가 없습니다."));
+	}
+
+	@Transactional(readOnly = true)
+	public List<User> findAll() {
+		return userRepository.findAll();
 	}
 }
