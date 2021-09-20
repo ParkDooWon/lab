@@ -1,1 +1,3 @@
 rootProject.name = 'lab'
+include 'sadari'
+include 'web-client'

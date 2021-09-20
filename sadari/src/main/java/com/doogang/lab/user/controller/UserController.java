@@ -24,6 +24,11 @@ public class UserController {
 	private final UserService userService;
 	private final TeamService teamService;
 
+	@GetMapping
+	public String test() {
+		return "asd";
+	}
+
 	@PostMapping("/teams/{teamId}/users")
 	public ResponseEntity<UserResponse> register(@PathVariable Long teamId, @RequestBody UserRequest userRequest) {
 		Team team = teamService.findTeamById(teamId);
