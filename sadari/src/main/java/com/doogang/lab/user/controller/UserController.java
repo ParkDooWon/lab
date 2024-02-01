@@ -66,4 +66,10 @@ public class UserController {
 		System.err.println("조회 끝!");
 		return ResponseEntity.ok(Boolean.TRUE);
 	}
+
+	@PostMapping("/mail")
+	public ResponseEntity<String> sendMail() {
+		userService.sendMail();
+		return ResponseEntity.ok("finish");
+	}
 }

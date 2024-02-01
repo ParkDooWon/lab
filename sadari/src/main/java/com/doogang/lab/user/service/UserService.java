@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
 
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class UserService {
 	private final UserRepository userRepository;
+	private final JavaMailSender mailSender;
 
 	@Transactional
 	public User registerUser(User user, Team team) {
@@ -31,5 +34,14 @@ public class UserService {
 	@Transactional(readOnly = true)
 	public List<User> findAll() {
 		return userRepository.findAll();
+	}
+
+	public void sendMail() {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo("to mail");
+		message.setFrom("from mail");
+		message.setSubject("test title2");
+		message.setText("test text2");
+		mailSender.send(message);
 	}
 }
